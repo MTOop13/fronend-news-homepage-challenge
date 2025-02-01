@@ -1,0 +1,385 @@
+   
+@font-face {
+  font-family: "Inter";
+  src:local("Inter-VariableFont_wght"),
+  url("assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+:root {
+   --clr-primary-100: hsl(35, 77%, 62%);
+   --clr-primary-200: hsl(5, 85%, 63%);
+   --clr-neutral-100: hsl(36, 100%, 99%);
+   --clr-neutral-200: hsl(233, 8%, 79%);
+   --clr-neutral-300: hsl(236, 13%, 42%);
+   --clr-neutral-400: hsl(240, 100%, 5%);
+
+   --ff-primary: 'Inter', serif;
+
+   --fs-paragraph: 15px;
+
+   --fw-bold: 800;
+   --fw-semi-bold: 700;
+   --fw-regular: 400;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styling */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-paragraph);
+  background-color: var(--clr-neutral-100);
+}
+
+* p {
+  opacity: .7;
+}
+
+.container {
+  margin: 7% 7%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  opacity: .8;
+}
+
+.nav-list li:hover {
+  cursor: pointer;
+  color: var(--clr-primary-200);
+}
+
+.nav-button {
+  display: none;
+}
+
+main {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 300px 220px 135px;
+}
+
+
+
+main picture {
+  height: 100%;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+main h1 {
+  font-weight: var(--fw-bold);
+  font-size: 45px;
+  line-height: 1.1;
+  max-width: 9ch;
+  grid-column: 1 / 2;
+}
+main .description {
+ 
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: 14px;
+}
+
+
+
+.read-more-btn {
+  margin-top: 2rem;
+  border: none;
+  width: 170px;
+  height: 45px;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-200);
+  letter-spacing: 3px;
+}
+
+.read-more-btn:hover {
+  cursor: pointer;
+  background-color: var(--clr-neutral-400);
+}
+
+main section {
+  padding: 2rem;
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+section h1 {
+  margin-bottom: 1.5rem;
+  color: var(--clr-primary-100);
+}
+
+
+.content {
+  margin-top: 2rem;
+}
+
+.content:not(:last-child){
+  padding-bottom: 1.5rem;
+  border-bottom:1px solid hsl(233, 8%, 40%);
+}
+
+.content h2 {
+  font-size: 1rem;
+  font-weight: var(--fw-semi-bold);
+}
+
+.content h2:hover {
+  cursor: pointer;
+  color: var(--clr-primary-100);
+}
+
+.content p {
+  font-size: 15px;
+  margin-block: .5rem;
+}
+
+.first-card,
+.second-card, 
+.third-card {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card-description div {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-300);
+  opacity: .5;
+}
+
+.card-description h3 {
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}
+
+.card-description h3:hover {
+  cursor: pointer;
+  color: var(--clr-primary-200);
+}
+
+.card-description p {
+  font-size: 14px;
+  min-width: 23ch;
+}
+
+
+
+@media (max-width: 70em) {
+  .container {
+    margin: 15px;
+  }
+  main {
+    grid-template-rows: min-content min-content 1fr;
+  }
+  .first-card, 
+  .second-card, 
+  .third-card {
+    flex-direction: column;
+    margin-top: 0;    
+  }
+  .card-description {
+    width: 200px;
+  }
+  .first-card img, 
+  .second-card img, 
+  .third-card  img{
+    max-width: 200px;
+    max-height: 170px;
+  }
+
+}
+
+@media (max-width: 45em){
+  
+  .nav-container {
+    display: none;
+    position: fixed;
+    background-color: var(--clr-neutral-100);
+    box-shadow: -8rem 0 0 rgb(0 0 0 / .5);
+    inset: 0;
+    left: 8rem;
+    z-index: 9;
+  }
+
+  .nav-container.active {
+    display: block;
+  }
+  .nav-list {
+    color: var(--clr-neutral-100);
+    color: var(--clr-neutral-400);
+    font-weight: 500;
+    display: grid;
+    position: fixed;
+    top: 10rem;
+    left: 9rem;
+    gap: 1.2rem;
+    z-index: 999;    
+  }
+
+  .nav-button {
+    background: url("assets/images/icon-menu.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border: none;
+    position: absolute;
+    z-index: 99;
+    top: 2rem;
+    right: 1rem;
+  }  
+
+  .nav-button[data-visible] {
+    background: url("assets/images/icon-menu-close.svg");
+    background-repeat: no-repeat;
+    position: fixed;
+  }
+  
+  
+  main {
+    grid-template-areas: 'image' 'header' 'description' 'section' 'first-card' 'second-card' 'third-card';
+    grid-template-columns: auto;
+  }
+  
+  main picture {
+    grid-area: image;
+  }
+  main h1 {
+    grid-area: header;
+    min-width: 10ch;
+  }
+  main .description {
+    grid-area: description;
+    
+    /* max-width: 36ch; */
+  }
+
+  main section {
+    grid-area: section;
+    margin-top: 2.5rem;
+  }
+
+  .first-card {
+    grid-area: first-card;
+    flex-direction: row;
+    min-width: fit-content;
+    margin-top: 2rem;
+  }
+
+  .second-card {
+    grid-area: second-card;
+    flex-direction: row;
+    min-width: fit-content;
+  }
+
+  .third-card {
+    grid-area: third-card;
+    flex-direction: row;
+    min-width: fit-content;
+  }
+
+  .first-card img, 
+  .second-card img, 
+  .third-card  img{
+    /* max-width: 150px; */
+    max-height: 120px;
+  }
+ 
+  
+}
+
+@media (max-width: 27em) {
+  main > * {
+    max-width: 330px;
+  }
+}
+
+
+
