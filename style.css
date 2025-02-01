@@ -338,7 +338,6 @@ section h1 {
   main .description {
     grid-area: description;
     
-    /* max-width: 36ch; */
   }
 
   main section {
